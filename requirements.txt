@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+pycryptodome
+qrcode[pil]
+pillow
+python-jose
+passlib
+bcrypt
+pydantic
