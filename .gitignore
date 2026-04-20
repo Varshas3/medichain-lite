@@ -1,0 +1,5 @@
+database/medichain.db
+qr_codes/
+__pycache__/
+*.pyc
+.env
