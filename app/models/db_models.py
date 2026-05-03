@@ -50,6 +50,7 @@ class AuditLog(Base):
     action          = Column(String(50), nullable=False)
     tier_accessed   = Column(Integer, nullable=False)
     details         = Column(Text)
+    chain_hash    = Column(String(64), nullable=False, index=True)
     timestamp       = Column(DateTime, default=datetime.utcnow, nullable=False)
     ip_address      = Column(String(45))
 
