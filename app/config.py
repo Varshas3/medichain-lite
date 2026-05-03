@@ -1,4 +1,3 @@
-# app/config.py — FIXED
 import os
 import base64
 
@@ -10,7 +9,6 @@ TIER_LABELS = {
 }
 
 def _load_key(env_var: str, fallback: bytes) -> bytes:
-    """Load a 32-byte AES key from env, or use fallback in dev."""
     raw = os.environ.get(env_var)
     if raw:
         key = base64.b64decode(raw)
@@ -19,7 +17,7 @@ def _load_key(env_var: str, fallback: bytes) -> bytes:
         return key
     if os.environ.get("APP_ENV") == "production":
         raise RuntimeError(f"Missing required env var {env_var} in production mode.")
-    return fallback  # dev/test only
+    return fallback
 
 TIER_KEYS = {
     0: _load_key("TIER0_KEY", b"TIER0KEY_EMERGENCY_PLAIN_NO_ENCR"),
