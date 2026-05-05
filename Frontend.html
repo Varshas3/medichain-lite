@@ -11,169 +11,53 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --teal: #0d9488;
-    --teal-light: #14b8a6;
-    --teal-dim: #ccfbf1;
-    --navy: #0f172a;
-    --slate: #334155;
-    --muted: #64748b;
-    --border: #e2e8f0;
-    --surface: #f8fafc;
-    --white: #ffffff;
-    --red: #ef4444;
-    --amber: #f59e0b;
-    --green: #10b981;
+    --teal: #0d9488; --teal-light: #14b8a6; --teal-dim: #ccfbf1;
+    --navy: #0f172a; --slate: #334155; --muted: #64748b;
+    --border: #e2e8f0; --surface: #f8fafc; --white: #ffffff;
+    --red: #ef4444; --amber: #f59e0b; --green: #10b981;
     --card-shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.04);
-    --radius: 16px;
-    --radius-sm: 10px;
+    --radius: 16px; --radius-sm: 10px;
   }
 
-  html, body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--surface);
-    color: var(--navy);
-    min-height: 100vh;
-    font-size: 15px;
-  }
+  html, body { font-family: 'DM Sans', sans-serif; background: var(--surface); color: var(--navy); min-height: 100vh; font-size: 15px; }
 
-  .phone-shell {
-    max-width: 390px;
-    margin: 0 auto;
-    background: var(--white);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-  }
+  .phone-shell { max-width: 390px; margin: 0 auto; background: var(--white); min-height: 100vh; display: flex; flex-direction: column; position: relative; overflow: hidden; }
 
-  .status-bar {
-    background: var(--teal);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px 6px;
-    font-size: 12px;
-    font-weight: 500;
-  }
+  .status-bar { background: var(--teal); color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px 6px; font-size: 12px; font-weight: 500; }
 
-  .top-nav {
-    background: var(--teal);
-    color: white;
-    padding: 8px 20px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+  .top-nav { background: var(--teal); color: white; padding: 8px 20px 20px; display: flex; align-items: center; gap: 12px; }
   .top-nav .logo { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
   .top-nav .sub { font-size: 12px; opacity: 0.8; }
-  .top-nav .avatar {
-    margin-left: auto;
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.25);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 14px;
-  }
+  .top-nav .avatar { margin-left: auto; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
 
   .screen { display: none; flex-direction: column; flex: 1; overflow-y: auto; }
   .screen.active { display: flex; }
 
-  .tab-bar {
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    display: flex;
-    padding: 8px 0 16px;
-    position: sticky; bottom: 0;
-    z-index: 10;
-  }
-  .tab-item {
-    flex: 1;
-    display: flex; flex-direction: column; align-items: center; gap: 3px;
-    padding: 6px;
-    cursor: pointer;
-    transition: all .15s;
-    border: none; background: none;
-    font-family: 'DM Sans', sans-serif;
-    color: var(--muted);
-    font-size: 11px;
-  }
+  .tab-bar { background: var(--white); border-top: 1px solid var(--border); display: flex; padding: 8px 0 16px; position: sticky; bottom: 0; z-index: 10; }
+  .tab-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px; cursor: pointer; transition: all .15s; border: none; background: none; font-family: 'DM Sans', sans-serif; color: var(--muted); font-size: 11px; }
   .tab-item.active { color: var(--teal); }
   .tab-icon { font-size: 20px; }
 
-  .card {
-    background: var(--white);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    box-shadow: var(--card-shadow);
-    overflow: hidden;
-  }
+  .card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--card-shadow); overflow: hidden; }
   .card-body { padding: 20px; }
-  .card-header {
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border);
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--slate);
-    display: flex; align-items: center; gap: 8px;
-  }
+  .card-header { padding: 16px 20px; border-bottom: 1px solid var(--border); font-weight: 600; font-size: 14px; color: var(--slate); display: flex; align-items: center; gap: 8px; }
 
   .content-area { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
 
-  .hero-card {
-    background: linear-gradient(135deg, var(--teal) 0%, #0891b2 100%);
-    border-radius: var(--radius);
-    padding: 24px 20px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-card::before {
-    content: '';
-    position: absolute;
-    top: -30px; right: -30px;
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-  }
-  .hero-card::after {
-    content: '';
-    position: absolute;
-    bottom: -20px; right: 20px;
-    width: 80px; height: 80px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.06);
-  }
+  .hero-card { background: linear-gradient(135deg, var(--teal) 0%, #0891b2 100%); border-radius: var(--radius); padding: 24px 20px; color: white; position: relative; overflow: hidden; }
+  .hero-card::before { content: ''; position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.08); }
   .hero-name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
   .hero-id { font-size: 12px; opacity: 0.75; font-family: 'DM Mono', monospace; }
   .hero-chips { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-  .hero-chip {
-    background: rgba(255,255,255,0.2);
-    border-radius: 20px;
-    padding: 4px 12px;
-    font-size: 12px;
-    font-weight: 500;
-  }
+  .hero-chip { background: rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 500; }
 
   .quick-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .stat-tile {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 16px;
-    display: flex; flex-direction: column; gap: 6px;
-  }
+  .stat-tile { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; display: flex; flex-direction: column; gap: 6px; }
   .stat-icon { font-size: 22px; }
   .stat-num { font-size: 24px; font-weight: 700; color: var(--navy); }
   .stat-label { font-size: 12px; color: var(--muted); }
 
-  .alert-strip {
-    border-radius: var(--radius-sm);
-    padding: 14px 16px;
-    display: flex; align-items: flex-start; gap: 12px;
-    border: 1px solid;
-  }
+  .alert-strip { border-radius: var(--radius-sm); padding: 14px 16px; display: flex; align-items: flex-start; gap: 12px; border: 1px solid; }
   .alert-strip.critical { background: #fef2f2; border-color: #fca5a5; }
   .alert-strip.major    { background: #fff7ed; border-color: #fdba74; }
   .alert-strip.moderate { background: #fffbeb; border-color: #fcd34d; }
@@ -182,80 +66,42 @@
   .alert-body .alert-title { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
   .alert-body .alert-desc { font-size: 12px; color: var(--muted); }
 
-  .med-item {
-    display: flex; align-items: center; gap: 14px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-  }
+  .med-item { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
   .med-item:last-child { border-bottom: none; }
   .med-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .med-info .med-name { font-weight: 600; font-size: 14px; }
   .med-info .med-dose { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  .med-refill {
-    margin-left: auto; font-size: 11px;
-    padding: 4px 10px; border-radius: 20px; font-weight: 500;
-  }
+  .med-refill { margin-left: auto; font-size: 11px; padding: 4px 10px; border-radius: 20px; font-weight: 500; }
   .med-refill.urgent { background: #fef2f2; color: #dc2626; }
   .med-refill.soon   { background: #fffbeb; color: #d97706; }
   .med-refill.ok     { background: #f0fdf4; color: #16a34a; }
 
-  .qr-wrap {
-    display: flex; flex-direction: column; align-items: center;
-    padding: 30px 20px; gap: 16px;
-  }
-  #qr-canvas {
-    border-radius: 12px;
-    border: 3px solid var(--teal);
-    padding: 12px;
-    background: white;
-  }
-  .qr-id { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted); }
+  .qr-wrap { display: flex; flex-direction: column; align-items: center; padding: 20px 20px 30px; gap: 14px; }
+  #qr-canvas { border-radius: 12px; border: 3px solid var(--teal); padding: 12px; background: white; }
+  .qr-id { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--muted); text-align: center; }
   .tier-badge { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
   .t-badge { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; }
   .t0 { background: #f1f5f9; color: var(--slate); }
   .t1 { background: #fef3c7; color: #92400e; }
   .t2 { background: #dbeafe; color: #1e40af; }
   .t3 { background: #ede9fe; color: #6d28d9; }
-  .qr-actions { display: flex; gap: 12px; width: 100%; }
+  .qr-actions { display: flex; gap: 10px; width: 100%; }
 
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    padding: 13px 20px;
-    border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px; font-weight: 600;
-    cursor: pointer; transition: all .15s; border: none;
-  }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 20px; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all .15s; border: none; }
   .btn:disabled { opacity: 0.6; cursor: not-allowed; }
-  .btn-primary  { background: var(--teal); color: white; flex: 1; }
+  .btn-primary { background: var(--teal); color: white; flex: 1; }
   .btn-primary:hover:not(:disabled) { background: #0f766e; }
-  .btn-outline  { background: white; color: var(--teal); border: 2px solid var(--teal); flex: 1; }
+  .btn-outline { background: white; color: var(--teal); border: 2px solid var(--teal); flex: 1; }
   .btn-outline:hover:not(:disabled) { background: var(--teal-dim); }
-  .btn-danger   { background: var(--red); color: white; }
-  .btn-full     { width: 100%; }
+  .btn-danger { background: var(--red); color: white; }
+  .btn-success { background: var(--green); color: white; flex: 1; }
+  .btn-full { width: 100%; }
 
   .form-group { display: flex; flex-direction: column; gap: 6px; }
   .form-label { font-size: 13px; font-weight: 600; color: var(--slate); }
-  .form-input {
-    padding: 12px 14px;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px; color: var(--navy);
-    outline: none; transition: border-color .15s; background: var(--white);
-  }
+  .form-input { padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--navy); outline: none; transition: border-color .15s; background: var(--white); }
   .form-input:focus { border-color: var(--teal); }
-  .form-select {
-    padding: 12px 14px;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px; color: var(--navy);
-    outline: none; background: var(--white); cursor: pointer; appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-  }
+  .form-select { padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--navy); outline: none; background: var(--white); cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
   .form-hint { font-size: 12px; color: var(--muted); }
 
   .steps { display: flex; align-items: center; gap: 8px; justify-content: center; padding: 20px; }
@@ -274,20 +120,6 @@
   .log-info .log-who  { font-size: 13px; font-weight: 600; }
   .log-info .log-what { font-size: 12px; color: var(--muted); margin-top: 2px; }
   .log-info .log-when { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: 'DM Mono', monospace; }
-
-  .refill-card { display: flex; gap: 14px; align-items: center; padding: 16px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); }
-  .refill-days { width: 52px; height: 52px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
-  .refill-days.urgent { background: #fef2f2; }
-  .refill-days.soon   { background: #fffbeb; }
-  .refill-days.ok     { background: #f0fdf4; }
-  .refill-days .days-num { font-size: 20px; font-weight: 800; line-height: 1; }
-  .refill-days.urgent .days-num { color: #dc2626; }
-  .refill-days.soon   .days-num { color: #d97706; }
-  .refill-days.ok     .days-num { color: #16a34a; }
-  .refill-days .days-label { font-size: 9px; font-weight: 600; color: var(--muted); text-transform: uppercase; }
-  .refill-info .refill-name   { font-weight: 600; font-size: 14px; }
-  .refill-info .refill-detail { font-size: 12px; color: var(--muted); margin-top: 3px; }
-  .refill-action { margin-left: auto; }
 
   .section-title { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
 
@@ -317,62 +149,25 @@
   .tag { background: var(--teal-dim); color: var(--teal); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
   .tag-x { cursor: pointer; font-size: 14px; line-height: 1; }
 
-  /* ── API status banner ── */
-  .api-banner {
-    padding: 10px 16px;
-    font-size: 12px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  /* API banner */
+  .api-banner { padding: 10px 16px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
   .api-banner.ok      { background: #f0fdf4; color: #166534; border-bottom: 1px solid #bbf7d0; }
   .api-banner.error   { background: #fef2f2; color: #991b1b; border-bottom: 1px solid #fca5a5; }
   .api-banner.loading { background: #f8fafc; color: var(--muted); border-bottom: 1px solid var(--border); }
 
-  /* ── Loading spinner ── */
-  .spinner {
-    width: 18px; height: 18px;
-    border: 2px solid rgba(255,255,255,0.4);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin .6s linear infinite;
-    flex-shrink: 0;
-  }
+  /* Spinner */
+  .spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.4); border-top-color: white; border-radius: 50%; animation: spin .6s linear infinite; flex-shrink: 0; }
   .spinner.dark { border-color: rgba(0,0,0,0.15); border-top-color: var(--teal); }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ── Toast ── */
-  #toast {
-    position: fixed;
-    bottom: 90px;
-    left: 50%; transform: translateX(-50%);
-    background: var(--navy);
-    color: white;
-    padding: 10px 18px;
-    border-radius: 24px;
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity .2s;
-    pointer-events: none;
-    z-index: 999;
-    max-width: 340px;
-    text-align: center;
-  }
+  /* Toast */
+  #toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%); background: var(--navy); color: white; padding: 10px 18px; border-radius: 24px; font-size: 13px; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 999; max-width: 340px; text-align: center; }
   #toast.show { opacity: 1; }
   #toast.error { background: var(--red); }
   #toast.success { background: #16a34a; }
 
-  /* ── Drug check panel ── */
-  .drug-result-item {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 12px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    margin-bottom: 8px;
-  }
+  /* Drug result items */
+  .drug-result-item { display: flex; align-items: flex-start; gap: 10px; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); margin-bottom: 8px; }
   .drug-result-item.critical { border-color: #fca5a5; background: #fef2f2; }
   .drug-result-item.major    { border-color: #fdba74; background: #fff7ed; }
   .drug-result-item.moderate { border-color: #fcd34d; background: #fffbeb; }
@@ -380,22 +175,27 @@
   .drug-result-item .sev-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
   .drug-result-item .result-info .drug-pair { font-weight: 700; font-size: 13px; }
   .drug-result-item .result-info .drug-rec  { font-size: 12px; color: var(--slate); margin-top: 3px; }
+  .drug-result-item .result-info .drug-mech { font-size: 11px; color: var(--muted); margin-top: 2px; font-style: italic; }
 
-  /* ── Scan panel ── */
+  /* Scan result */
   .scan-panel { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
-
-  .success-icon-wrap {
-    display: flex; justify-content: center; padding: 20px 0;
-  }
-  .success-icon {
-    width: 72px; height: 72px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--teal), #0891b2);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 32px;
-    animation: pop .4s cubic-bezier(.175,.885,.32,1.275);
-  }
+  .success-icon-wrap { display: flex; justify-content: center; padding: 16px 0; }
+  .success-icon { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), #0891b2); display: flex; align-items: center; justify-content: center; font-size: 32px; animation: pop .4s cubic-bezier(.175,.885,.32,1.275); }
   @keyframes pop { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+
+  /* Demo banner */
+  .demo-banner { background: linear-gradient(135deg, #7c3aed, #4f46e5); color: white; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .demo-banner .demo-text { font-size: 13px; font-weight: 600; }
+  .demo-banner .demo-sub  { font-size: 11px; opacity: 0.8; margin-top: 2px; }
+  .demo-load-btn { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background .15s; }
+  .demo-load-btn:hover { background: rgba(255,255,255,0.35); }
+
+  /* Decrypted tier data display */
+  .tier-data-block { background: var(--surface); border-radius: var(--radius-sm); padding: 14px; border: 1px solid var(--border); }
+  .tier-data-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; gap: 12px; }
+  .tier-data-row:last-child { border-bottom: none; }
+  .tier-data-key { color: var(--muted); font-weight: 600; flex-shrink: 0; }
+  .tier-data-val { color: var(--navy); text-align: right; word-break: break-word; }
 </style>
 </head>
 <body>
@@ -420,8 +220,17 @@
       </div>
     </div>
 
+    <!-- Demo loader banner -->
+    <div class="demo-banner">
+      <div>
+        <div class="demo-text">🎓 Professor Demo Mode</div>
+        <div class="demo-sub">Load sample patient data instantly</div>
+      </div>
+      <button class="demo-load-btn" onclick="loadDemoPatient()">Load Demo →</button>
+    </div>
+
     <div class="steps">
-      <div class="step active"  id="s1">1</div><div class="step-line" id="sl1"></div>
+      <div class="step active" id="s1">1</div><div class="step-line" id="sl1"></div>
       <div class="step pending" id="s2">2</div><div class="step-line" id="sl2"></div>
       <div class="step pending" id="s3">3</div><div class="step-line" id="sl3"></div>
       <div class="step pending" id="s4">4</div>
@@ -436,17 +245,17 @@
           <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
             <div class="form-group">
               <label class="form-label">Full Name</label>
-              <input class="form-input" id="p-name" placeholder="Priya Sharma" value="Priya Sharma">
+              <input class="form-input" id="p-name" placeholder="Priya Sharma">
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
               <div class="form-group">
                 <label class="form-label">Age</label>
-                <input class="form-input" id="p-age" type="number" placeholder="34" value="34">
+                <input class="form-input" id="p-age" type="number" placeholder="34">
               </div>
               <div class="form-group">
                 <label class="form-label">Gender</label>
                 <select class="form-select" id="p-gender">
-                  <option value="F" selected>Female</option>
+                  <option value="F">Female</option>
                   <option value="M">Male</option>
                   <option value="O">Other</option>
                 </select>
@@ -455,19 +264,14 @@
             <div class="form-group">
               <label class="form-label">Blood Group</label>
               <select class="form-select" id="p-blood">
-                <option>A+</option><option>A−</option><option selected>B+</option>
+                <option>A+</option><option>A−</option><option>B+</option>
                 <option>B−</option><option>O+</option><option>O−</option>
                 <option>AB+</option><option>AB−</option>
               </select>
             </div>
             <div class="form-group">
               <label class="form-label">Phone</label>
-              <input class="form-input" id="p-phone" placeholder="+91 98XXXXXXXXX" value="+91 9876543210">
-            </div>
-            <div class="form-group">
-              <label class="form-label">ABHA / Aadhaar ID (optional)</label>
-              <input class="form-input" id="p-abha" placeholder="XXXX-XXXX-XXXX">
-              <span class="form-hint">Linking enables future ABDM integration</span>
+              <input class="form-input" id="p-phone" placeholder="+91 98XXXXXXXXX">
             </div>
           </div>
         </div>
@@ -477,15 +281,15 @@
       <!-- Step 2 -->
       <div class="reg-step" id="reg-step-2">
         <div class="card">
-          <div class="card-header">🚨 Emergency Info (Tier 1)</div>
+          <div class="card-header">🚨 Emergency Info — Tier 1</div>
           <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
             <div class="form-group">
               <label class="form-label">Emergency Contact Name</label>
-              <input class="form-input" id="ec-name" placeholder="Rahul Sharma" value="Rahul Sharma">
+              <input class="form-input" id="ec-name" placeholder="Rahul Sharma">
             </div>
             <div class="form-group">
               <label class="form-label">Emergency Contact Phone</label>
-              <input class="form-input" id="ec-phone" placeholder="+91 98XXX XXXXX" value="+91 98765 43210">
+              <input class="form-input" id="ec-phone" placeholder="+91 98765 43210">
             </div>
             <div class="form-group">
               <label class="form-label">Known Allergies</label>
@@ -493,9 +297,7 @@
                 <input class="form-input" id="allergy-input" placeholder="e.g. Penicillin" style="flex:1;" onkeydown="if(event.key==='Enter')addTag('allergy')">
                 <button class="btn btn-outline" style="flex:none;padding:12px;" onclick="addTag('allergy')">+</button>
               </div>
-              <div class="tags-wrap" id="allergy-tags">
-                <span class="tag">Penicillin <span class="tag-x" onclick="removeTag(this)">×</span></span>
-              </div>
+              <div class="tags-wrap" id="allergy-tags"></div>
             </div>
           </div>
         </div>
@@ -508,7 +310,7 @@
       <!-- Step 3 -->
       <div class="reg-step" id="reg-step-3">
         <div class="card">
-          <div class="card-header">💊 Medications & Diagnoses (Tier 2)</div>
+          <div class="card-header">💊 Medications — Tier 2</div>
           <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
             <div class="form-group">
               <label class="form-label">Current Medications</label>
@@ -516,10 +318,7 @@
                 <input class="form-input" id="med-input" placeholder="e.g. Metformin 500mg OD" style="flex:1;" onkeydown="if(event.key==='Enter')addTag('med')">
                 <button class="btn btn-outline" style="flex:none;padding:12px;" onclick="addTag('med')">+</button>
               </div>
-              <div class="tags-wrap" id="med-tags">
-                <span class="tag">Metformin 500mg OD <span class="tag-x" onclick="removeTag(this)">×</span></span>
-                <span class="tag">Amlodipine 5mg OD <span class="tag-x" onclick="removeTag(this)">×</span></span>
-              </div>
+              <div class="tags-wrap" id="med-tags"></div>
             </div>
             <div class="form-group">
               <label class="form-label">Diagnoses / Conditions</label>
@@ -527,10 +326,7 @@
                 <input class="form-input" id="diag-input" placeholder="e.g. Type 2 Diabetes" style="flex:1;" onkeydown="if(event.key==='Enter')addTag('diag')">
                 <button class="btn btn-outline" style="flex:none;padding:12px;" onclick="addTag('diag')">+</button>
               </div>
-              <div class="tags-wrap" id="diag-tags">
-                <span class="tag">T2DM <span class="tag-x" onclick="removeTag(this)">×</span></span>
-                <span class="tag">Hypertension <span class="tag-x" onclick="removeTag(this)">×</span></span>
-              </div>
+              <div class="tags-wrap" id="diag-tags"></div>
             </div>
           </div>
         </div>
@@ -543,13 +339,13 @@
       <!-- Step 4 -->
       <div class="reg-step" id="reg-step-4">
         <div class="card">
-          <div class="card-header">🔐 Tier Structure Preview</div>
+          <div class="card-header">🔐 Tier Structure</div>
           <div class="card-body">
             <div class="tier-legend">
-              <div class="tier-row t0"><div class="tier-num">0</div><div class="tier-desc"><div class="tier-title">Public ID</div><div class="tier-who">Patient name, blood group — unencrypted</div></div></div>
-              <div class="tier-row t1"><div class="tier-num">1</div><div class="tier-desc"><div class="tier-title">Emergency Info</div><div class="tier-who">Allergies, contacts — ASHA key</div></div></div>
-              <div class="tier-row t2"><div class="tier-num">2</div><div class="tier-desc"><div class="tier-title">Clinical Record</div><div class="tier-who">Medications, diagnoses — Doctor/Pharmacist</div></div></div>
-              <div class="tier-row t3"><div class="tier-num">3</div><div class="tier-desc"><div class="tier-title">Full Audit Trail</div><div class="tier-who">Consult history — Consent required</div></div></div>
+              <div class="tier-row t0"><div class="tier-num">0</div><div class="tier-desc"><div class="tier-title">Public ID — Name, Blood Group</div><div class="tier-who">No encryption · Anyone can read</div></div></div>
+              <div class="tier-row t1"><div class="tier-num">1</div><div class="tier-desc"><div class="tier-title">Emergency Info — AES-256</div><div class="tier-who">ASHA workers / First responders</div></div></div>
+              <div class="tier-row t2"><div class="tier-num">2</div><div class="tier-desc"><div class="tier-title">Clinical Record — AES-256</div><div class="tier-who">Pharmacists &amp; Doctors</div></div></div>
+              <div class="tier-row t3"><div class="tier-num">3</div><div class="tier-desc"><div class="tier-title">Full History — AES-256</div><div class="tier-who">Doctor only · Consent required</div></div></div>
             </div>
           </div>
         </div>
@@ -564,16 +360,14 @@
         </div>
         <div style="display:flex;gap:10px;">
           <button class="btn btn-outline" onclick="nextStep(3)">← Back</button>
-          <button class="btn btn-primary" style="flex:1;" id="reg-submit-btn" onclick="completeRegistration()">🔒 Generate QR</button>
+          <button class="btn btn-primary" style="flex:1;" id="reg-submit-btn" onclick="completeRegistration()">🔒 Register & Encrypt</button>
         </div>
         <div id="reg-error" style="display:none;" class="alert-strip critical">
           <div class="alert-icon">⚠️</div>
-          <div class="alert-body">
-            <div class="alert-title">Registration failed</div>
-            <div class="alert-desc" id="reg-error-msg">Unknown error</div>
-          </div>
+          <div class="alert-body"><div class="alert-title">Registration failed</div><div class="alert-desc" id="reg-error-msg"></div></div>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -582,28 +376,28 @@
     <div class="top-nav">
       <div>
         <div class="logo">🏥 MediChain</div>
-        <div class="sub" id="dash-greeting">Good morning</div>
+        <div class="sub" id="dash-greeting">Dashboard</div>
       </div>
       <div class="avatar" id="dash-avatar">?</div>
     </div>
     <div class="content-area" style="flex:1;overflow-y:auto;">
 
       <div class="hero-card">
-        <div class="hero-name" id="dash-name">Loading…</div>
-        <div class="hero-id" id="dash-uid" style="font-family:'DM Mono',monospace;font-size:12px;opacity:.75;"></div>
+        <div class="hero-name" id="dash-name">—</div>
+        <div class="hero-id" id="dash-uid"></div>
         <div class="hero-chips" id="dash-chips"></div>
       </div>
 
       <div class="quick-stats">
         <div class="stat-tile"><div class="stat-icon">💊</div><div class="stat-num" id="stat-meds">—</div><div class="stat-label">Active medications</div></div>
-        <div class="stat-tile"><div class="stat-icon">🔔</div><div class="stat-num" id="stat-refills">—</div><div class="stat-label">Refill alerts</div></div>
-        <div class="stat-tile"><div class="stat-icon">📋</div><div class="stat-num" id="stat-access">—</div><div class="stat-label">Access events</div></div>
-        <div class="stat-tile"><div class="stat-icon">🔐</div><div class="stat-num">4</div><div class="stat-label">Tier levels</div></div>
+        <div class="stat-tile"><div class="stat-icon">🔐</div><div class="stat-num">4</div><div class="stat-label">Encryption tiers</div></div>
+        <div class="stat-tile"><div class="stat-icon">📋</div><div class="stat-num" id="stat-access">0</div><div class="stat-label">Access events</div></div>
+        <div class="stat-tile"><div class="stat-icon">✅</div><div class="stat-num" id="stat-chain">—</div><div class="stat-label">Chain integrity</div></div>
       </div>
 
       <!-- Drug Interaction Checker -->
       <div class="card">
-        <div class="card-header">💊 Drug Interaction Checker</div>
+        <div class="card-header">⚗️ Drug Interaction Checker</div>
         <div class="card-body" style="display:flex;flex-direction:column;gap:12px;">
           <div class="form-group">
             <label class="form-label">New Drug to Check</label>
@@ -618,16 +412,19 @@
               <input class="form-input" id="drug-existing-input" placeholder="e.g. aspirin" style="flex:1;" onkeydown="if(event.key==='Enter')addDrugTag()">
               <button class="btn btn-outline" style="flex:none;padding:12px;" onclick="addDrugTag()">+</button>
             </div>
-            <div class="tags-wrap" id="drug-existing-tags">
-              <span class="tag">metformin <span class="tag-x" onclick="removeTag(this)">×</span></span>
-              <span class="tag">amlodipine <span class="tag-x" onclick="removeTag(this)">×</span></span>
-            </div>
+            <div class="tags-wrap" id="drug-existing-tags"></div>
+          </div>
+          <!-- Quick demo buttons for drug check -->
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="font-size:12px;color:var(--muted);align-self:center;">Quick check:</span>
+            <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;flex:none;" onclick="quickDrugCheck('warfarin','aspirin')">⚠️ Warfarin+Aspirin</button>
+            <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;flex:none;" onclick="quickDrugCheck('paracetamol','metformin')">✅ Safe combo</button>
           </div>
           <div id="drug-results"></div>
         </div>
       </div>
 
-      <!-- Access Log -->
+      <!-- Access log -->
       <div class="card">
         <div class="card-header">🔍 Recent Access Log</div>
         <div class="card-body" id="access-log-body">
@@ -641,7 +438,7 @@
       <button class="tab-item active" onclick="showTab('dashboard')"><span class="tab-icon">🏠</span>Home</button>
       <button class="tab-item" onclick="showTab('qr')"><span class="tab-icon">📱</span>QR Code</button>
       <button class="tab-item" onclick="showTab('scan')"><span class="tab-icon">🔬</span>Scan</button>
-      <button class="tab-item" onclick="showTab('consent')"><span class="tab-icon">🔐</span>Consent</button>
+      <button class="tab-item" onclick="showTab('consent')"><span class="tab-icon">🔐</span>Audit</button>
     </div>
   </div>
 
@@ -654,7 +451,7 @@
       <div class="qr-wrap">
         <div style="text-align:center;">
           <div style="font-weight:700;font-size:16px;margin-bottom:4px;" id="qr-patient-name">—</div>
-          <div style="font-size:12px;color:var(--muted);" id="qr-patient-sub">Loading…</div>
+          <div style="font-size:12px;color:var(--muted);" id="qr-patient-sub">—</div>
         </div>
 
         <div id="qr-canvas"></div>
@@ -666,21 +463,20 @@
           <span class="t-badge t3">T3 Full</span>
         </div>
 
-        <div class="qr-id">AES-256 · 4-tier encrypted payload</div>
-
-        <div id="qr-dispense-status"></div>
+        <div class="qr-id" id="qr-enc-label">AES-256-CBC · 4-tier encrypted</div>
 
         <div class="alert-strip info" style="width:100%;text-align:left;">
           <div class="alert-icon">ℹ️</div>
           <div class="alert-body">
-            <div class="alert-title">Offline — No internet needed</div>
-            <div class="alert-desc">Your full record is stored in this QR. Providers scan and decrypt locally.</div>
+            <div class="alert-title">Offline — No internet required to scan</div>
+            <div class="alert-desc">All tiers encrypted inside the QR. Providers decrypt locally with their key.</div>
           </div>
         </div>
 
+        <!-- KEY FIX: Copy QR JSON button auto-populates the scan tab -->
         <div class="qr-actions">
           <button class="btn btn-outline" onclick="refreshQR()">🔄 Refresh</button>
-          <button class="btn btn-primary" onclick="printQR()">🖨️ Print Card</button>
+          <button class="btn btn-success" onclick="copyQRAndGoToScan()" id="copy-qr-btn">📋 Copy & Scan</button>
         </div>
 
         <div class="card" style="width:100%;">
@@ -690,7 +486,7 @@
               <div class="tier-row t0"><div class="tier-num">0</div><div class="tier-desc"><div class="tier-title">Anyone — Name, ID, Blood Group</div></div></div>
               <div class="tier-row t1"><div class="tier-num">1</div><div class="tier-desc"><div class="tier-title">ASHA / First Responder — Allergies, Contact</div></div></div>
               <div class="tier-row t2"><div class="tier-num">2</div><div class="tier-desc"><div class="tier-title">Doctor / Pharmacist — Medications, Diagnoses</div></div></div>
-              <div class="tier-row t3"><div class="tier-num">3</div><div class="tier-desc"><div class="tier-title">Consultant (Consented) — Full Audit, History</div></div></div>
+              <div class="tier-row t3"><div class="tier-num">3</div><div class="tier-desc"><div class="tier-title">Consultant (Consented) — Full History</div></div></div>
             </div>
           </div>
         </div>
@@ -700,7 +496,7 @@
       <button class="tab-item" onclick="showTab('dashboard')"><span class="tab-icon">🏠</span>Home</button>
       <button class="tab-item active" onclick="showTab('qr')"><span class="tab-icon">📱</span>QR Code</button>
       <button class="tab-item" onclick="showTab('scan')"><span class="tab-icon">🔬</span>Scan</button>
-      <button class="tab-item" onclick="showTab('consent')"><span class="tab-icon">🔐</span>Consent</button>
+      <button class="tab-item" onclick="showTab('consent')"><span class="tab-icon">🔐</span>Audit</button>
     </div>
   </div>
 
@@ -711,24 +507,29 @@
     </div>
     <div style="flex:1;overflow-y:auto;">
       <div class="scan-panel">
-        <p style="font-size:13px;color:var(--muted);">Simulate scanning a patient QR as a provider. Paste the QR JSON payload and enter provider credentials.</p>
+        <div class="alert-strip info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-body">
+            <div class="alert-title">How to demo this</div>
+            <div class="alert-desc">Go to QR tab → tap "Copy & Scan" → come back here → change provider role → tap Scan & Decrypt.</div>
+          </div>
+        </div>
 
         <div class="form-group">
-          <label class="form-label">Provider ID</label>
+          <label class="form-label">Provider Role</label>
           <select class="form-select" id="scan-provider-id" onchange="autofillProviderKey()">
-            <option value="DOC-KA-00001">DOC-KA-00001 (Doctor, Tier 3)</option>
-            <option value="PHR-KA-00001">PHR-KA-00001 (Pharmacist, Tier 2)</option>
-            <option value="ASH-KA-00001">ASH-KA-00001 (ASHA, Tier 1)</option>
+            <option value="DOC-KA-00001">🩺 Doctor — Tier 3 (Full Access)</option>
+            <option value="PHR-KA-00001">💊 Pharmacist — Tier 2</option>
+            <option value="ASH-KA-00001">🏥 ASHA Worker — Tier 1</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">License Key</label>
-          <input class="form-input" id="scan-license-key" value="DOCTOR_KEY_001">
+          <label class="form-label">License Key (auto-filled)</label>
+          <input class="form-input" id="scan-license-key" value="DOCTOR_KEY_001" style="font-family:'DM Mono',monospace;">
         </div>
         <div class="form-group">
-          <label class="form-label">QR Payload JSON</label>
-          <textarea class="form-input" id="scan-qr-json" rows="4" style="resize:vertical;font-family:'DM Mono',monospace;font-size:11px;" placeholder='{"v":1,"uid":"…","t0":"…","t1":"…","t2":"…","t3":"…"}'></textarea>
-          <span class="form-hint">Click "Copy QR JSON" on the QR screen first to populate this field automatically.</span>
+          <label class="form-label">QR Payload</label>
+          <textarea class="form-input" id="scan-qr-json" rows="3" style="resize:vertical;font-family:'DM Mono',monospace;font-size:11px;" placeholder='Use "Copy & Scan" on the QR tab to auto-fill this'></textarea>
         </div>
         <button class="btn btn-primary btn-full" id="scan-btn" onclick="doScan()">🔍 Scan & Decrypt</button>
 
@@ -739,76 +540,75 @@
       <button class="tab-item" onclick="showTab('dashboard')"><span class="tab-icon">🏠</span>Home</button>
       <button class="tab-item" onclick="showTab('qr')"><span class="tab-icon">📱</span>QR Code</button>
       <button class="tab-item active" onclick="showTab('scan')"><span class="tab-icon">🔬</span>Scan</button>
-      <button class="tab-item" onclick="showTab('consent')"><span class="tab-icon">🔐</span>Consent</button>
+      <button class="tab-item" onclick="showTab('consent')"><span class="tab-icon">🔐</span>Audit</button>
     </div>
   </div>
 
-  <!-- ══════════════════════ CONSENT SCREEN ══════════════════════ -->
+  <!-- ══════════════════════ AUDIT / CONSENT ══════════════════════ -->
   <div class="screen" id="screen-consent">
     <div class="top-nav">
-      <div><div class="logo">🏥 MediChain</div><div class="sub">Data Consent & Privacy</div></div>
+      <div><div class="logo">🏥 MediChain</div><div class="sub">Audit Trail & Consent</div></div>
     </div>
     <div class="content-area" style="flex:1;overflow-y:auto;">
       <div class="alert-strip info">
         <div class="alert-icon">🔐</div>
         <div class="alert-body">
-          <div class="alert-title">You control your data</div>
-          <div class="alert-desc">All data is stored on your device. Revoke access anytime.</div>
+          <div class="alert-title">Tamper-evident blockchain-style audit</div>
+          <div class="alert-desc">Every access is SHA-256 chained. Deleting any row breaks the chain.</div>
         </div>
       </div>
+
       <div class="card">
-        <div class="card-header">🔓 Active Tier Permissions</div>
+        <div class="card-header">🔓 Tier Permissions</div>
         <div class="card-body">
           <div class="consent-row">
-            <div class="consent-info"><div class="consent-title">Tier 1 — Emergency Access</div><div class="consent-desc">Any first responder can view allergies & contacts</div></div>
+            <div class="consent-info"><div class="consent-title">Tier 1 — Emergency Access</div><div class="consent-desc">ASHA workers can view allergies & contacts</div></div>
             <button class="toggle on" onclick="this.classList.toggle('on')"></button>
           </div>
           <div class="consent-row">
-            <div class="consent-info"><div class="consent-title">Tier 2 — Clinical Record</div><div class="consent-desc">Credentialed doctors & pharmacists</div></div>
+            <div class="consent-info"><div class="consent-title">Tier 2 — Clinical Record</div><div class="consent-desc">Credentialed pharmacists & doctors</div></div>
             <button class="toggle on" onclick="this.classList.toggle('on')"></button>
           </div>
           <div class="consent-row">
-            <div class="consent-info"><div class="consent-title">Tier 3 — Full Audit Trail</div><div class="consent-desc">Requires explicit per-session consent</div></div>
+            <div class="consent-info"><div class="consent-title">Tier 3 — Full History</div><div class="consent-desc">Requires explicit per-session consent</div></div>
             <button class="toggle" onclick="this.classList.toggle('on')"></button>
           </div>
         </div>
       </div>
 
-      <div class="section-title">Full Access Log</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="section-title">Access Log</div>
+        <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;flex:none;" onclick="verifyChain()">🔗 Verify Chain</button>
+      </div>
+
+      <div id="chain-status" style="display:none;"></div>
+
       <div class="card">
         <div class="card-body" id="full-audit-log">
           <div style="color:var(--muted);font-size:13px;text-align:center;padding:16px 0;">No audit entries yet.</div>
         </div>
       </div>
-
-      <button class="btn btn-outline btn-full" style="color:var(--red);border-color:var(--red);"
-        onclick="if(confirm('Regenerate QR? All existing codes will be invalidated.')) toast('QR regenerated — old codes are now invalid.', 'success')">
-        🔄 Regenerate QR (Revoke All Access)
-      </button>
     </div>
     <div class="tab-bar">
       <button class="tab-item" onclick="showTab('dashboard')"><span class="tab-icon">🏠</span>Home</button>
       <button class="tab-item" onclick="showTab('qr')"><span class="tab-icon">📱</span>QR Code</button>
       <button class="tab-item" onclick="showTab('scan')"><span class="tab-icon">🔬</span>Scan</button>
-      <button class="tab-item active" onclick="showTab('consent')"><span class="tab-icon">🔐</span>Consent</button>
+      <button class="tab-item active" onclick="showTab('consent')"><span class="tab-icon">🔐</span>Audit</button>
     </div>
   </div>
-</div>
 
+</div>
 <div id="toast"></div>
 
 <script>
 /* ══════════════════════════════════════════════════════════
-   CONFIG — adjust BASE_URL to match your running FastAPI
+   CONFIG
    ══════════════════════════════════════════════════════════ */
-const BASE_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-  ? `http://${window.location.hostname}:8000/api/v1`
-  : '/api/v1';
+const BASE_URL = 'http://localhost:8000/api/v1';
 
-/* ── App state ── */
 const state = {
-  patient: null,       // full patient object after registration
-  qrPayload: null,     // raw QR JSON string (real encrypted payload)
+  patient:    null,
+  qrPayload:  null,   // ← the REAL encrypted JSON string from the server
   auditTrail: [],
 };
 
@@ -816,85 +616,103 @@ const state = {
    API HELPERS
    ══════════════════════════════════════════════════════════ */
 async function apiPost(path, body) {
-  const res = await fetch(BASE_URL + path, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
+  const res  = await fetch(BASE_URL + path, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
   const data = await res.json();
   if (!res.ok) throw new Error(data.detail || JSON.stringify(data));
   return data;
 }
-
 async function apiGet(path) {
-  const res = await fetch(BASE_URL + path);
+  const res  = await fetch(BASE_URL + path);
   const data = await res.json();
   if (!res.ok) throw new Error(data.detail || JSON.stringify(data));
   return data;
 }
 
-/* ── Health check on load ── */
 async function checkHealth() {
   const banner = document.getElementById('api-banner');
   try {
     const data = await apiGet('/health');
-    banner.className = 'api-banner ok';
-    banner.innerHTML = `✅ Connected to ${data.system}`;
-    setTimeout(() => banner.style.display = 'none', 2000);
-  } catch (e) {
+    banner.className   = 'api-banner ok';
+    banner.innerHTML   = `✅ Connected — ${data.system} is running`;
+    setTimeout(() => banner.style.display = 'none', 2500);
+  } catch(e) {
     banner.className = 'api-banner error';
-    banner.innerHTML = `⚠️ API offline — running in demo mode. Start FastAPI server at port 8000.`;
+    banner.innerHTML = `⚠️ Cannot reach API at localhost:8000 — run: uvicorn main:app --reload`;
   }
+}
+
+/* ══════════════════════════════════════════════════════════
+   DEMO DATA LOADER
+   ══════════════════════════════════════════════════════════ */
+function loadDemoPatient() {
+  document.getElementById('p-name').value  = 'Priya Sharma';
+  document.getElementById('p-age').value   = '34';
+  document.getElementById('p-blood').value = 'B+';
+  document.getElementById('p-phone').value = '+91 9876543210';
+  document.getElementById('p-gender').value = 'F';
+
+  nextStep(2);
+  document.getElementById('ec-name').value  = 'Rahul Sharma';
+  document.getElementById('ec-phone').value = '+91 9876543211';
+  setTags('allergy-tags', ['Penicillin', 'Aspirin']);
+
+  nextStep(3);
+  setTags('med-tags',  ['Metformin 500mg OD', 'Amlodipine 5mg OD', 'Atorvastatin 10mg HS']);
+  setTags('diag-tags', ['Type 2 Diabetes', 'Hypertension', 'Dyslipidemia']);
+
+  nextStep(4);
+  toast('Demo patient loaded — tap "Register & Encrypt"', 'success');
+}
+
+function setTags(containerId, values) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  values.forEach(val => {
+    const tag = document.createElement('span');
+    tag.className = 'tag';
+    tag.innerHTML = val + ' <span class="tag-x" onclick="removeTag(this)">×</span>';
+    container.appendChild(tag);
+  });
 }
 
 /* ══════════════════════════════════════════════════════════
    REGISTRATION
    ══════════════════════════════════════════════════════════ */
-let currentStep = 1;
-
 function nextStep(n) {
   document.querySelectorAll('.reg-step').forEach(el => el.classList.remove('active'));
   document.getElementById('reg-step-' + n).classList.add('active');
-  for (let i = 1; i <= 4; i++) {
-    document.getElementById('s' + i).className = 'step ' + (i < n ? 'done' : i === n ? 'active' : 'pending');
-  }
-  for (let i = 1; i <= 3; i++) {
-    document.getElementById('sl' + i).className = 'step-line ' + (i < n ? 'done' : '');
-  }
-  currentStep = n;
-  if (n === 4) populateReview();
+  for (let i=1; i<=4; i++) document.getElementById('s'+i).className = 'step '+(i<n?'done':i===n?'active':'pending');
+  for (let i=1; i<=3; i++) document.getElementById('sl'+i).className = 'step-line '+(i<n?'done':'');
+  if (n===4) populateReview();
 }
 
 function populateReview() {
   document.getElementById('rev-name').textContent     = document.getElementById('p-name').value || '—';
-  document.getElementById('rev-blood').textContent    = document.getElementById('p-blood').value || '—';
-  document.getElementById('rev-allergies').textContent = document.querySelectorAll('#allergy-tags .tag').length + ' entries';
-  document.getElementById('rev-meds').textContent     = document.querySelectorAll('#med-tags .tag').length + ' entries';
+  document.getElementById('rev-blood').textContent    = document.getElementById('p-blood').value;
+  document.getElementById('rev-allergies').textContent = getTags('allergy-tags').length + ' entries';
+  document.getElementById('rev-meds').textContent     = getTags('med-tags').length + ' entries';
 }
 
-function buildPatientUID() {
-  const name = (document.getElementById('p-name').value || 'PAT').substring(0, 3).toUpperCase();
-  const ts   = Date.now().toString().slice(-6);
-  return `PAT-${name}-${ts}`;
+function getTags(id) {
+  return [...document.querySelectorAll(`#${id} .tag`)].map(t => t.textContent.replace('×','').trim());
 }
 
-function getTags(containerId) {
-  return [...document.querySelectorAll(`#${containerId} .tag`)].map(t => t.textContent.replace('×', '').trim());
+function buildUID() {
+  const name = (document.getElementById('p-name').value || 'PAT').substring(0,3).toUpperCase();
+  return `PAT-${name}-${Date.now().toString().slice(-5)}`;
 }
 
 async function completeRegistration() {
   const btn    = document.getElementById('reg-submit-btn');
   const errBox = document.getElementById('reg-error');
-  const errMsg = document.getElementById('reg-error-msg');
   errBox.style.display = 'none';
-
   btn.disabled = true;
-  btn.innerHTML = '<div class="spinner"></div> Registering & encrypting…';
+  btn.innerHTML = '<div class="spinner"></div> Encrypting & registering…';
 
-  const allergies    = getTags('allergy-tags');
-  const medications  = getTags('med-tags');
-  const diagnoses    = getTags('diag-tags');
-  const uid          = buildPatientUID();
+  const allergies   = getTags('allergy-tags');
+  const medications = getTags('med-tags');
+  const diagnoses   = getTags('diag-tags');
+  const uid         = buildUID();
 
   const body = {
     patient_uid: uid,
@@ -909,23 +727,23 @@ async function completeRegistration() {
       emergency_contact: document.getElementById('ec-phone').value,
     },
     tier1: {
-      emergency_contact_name: document.getElementById('ec-name').value,
+      emergency_contact_name:  document.getElementById('ec-name').value,
       emergency_contact_phone: document.getElementById('ec-phone').value,
-      chronic_conditions: diagnoses,
-      current_medications: medications.map(m => m.split(' ')[0]), // names only
+      chronic_conditions:      diagnoses,
+      current_medications:     medications.map(m => m.split(' ')[0]),
     },
     tier2: {
       prescriptions: medications.map(m => {
-        const parts = m.split(' ');
-        return { drug: parts[0], dose: parts[1] || '', frequency: parts[2] || '' };
+        const p = m.split(' ');
+        return { drug: p[0], dose: p[1]||'', frequency: p[2]||'' };
       }),
       diagnoses,
       refill_history: [],
     },
     tier3: {
-      full_history:    [],
-      lab_results:     [],
-      doctor_notes:    '',
+      full_history:      [],
+      lab_results:       [],
+      doctor_notes:      '',
       adverse_reactions: allergies,
     },
   };
@@ -933,60 +751,28 @@ async function completeRegistration() {
   try {
     const result = await apiPost('/patients/register', body);
 
-    // Store state
-    state.patient = { ...body, patient_uid: result.patient_uid };
+    // *** KEY FIX: store the REAL encrypted QR payload from the server ***
+    state.patient   = { ...body, patient_uid: result.patient_uid };
+    state.qrPayload = JSON.stringify(result.qr_payload);
 
-    // Build real encrypted QR payload from the response
-    // The server registered + generated QR — now we re-build the QR JSON
-    // by hitting the server's own encrypted blobs via a scan with a doctor key
-    // (simulated: we just stored the raw tier data, so we reconstruct the QR payload)
-    // For a real app you'd store the encrypted blobs from the DB.
-    // Here we call check on the audit to confirm, then build QR from known data.
-    await buildRealQRPayload(body);
+    // Pre-populate the scan textarea for the demo
+    document.getElementById('scan-qr-json').value = state.qrPayload;
 
-    // Switch screens
+    // Pre-populate drug checker with patient's medications
+    setDrugTags(medications.map(m => m.split(' ')[0]));
+
     document.getElementById('screen-register').classList.remove('active');
     document.getElementById('screen-dashboard').classList.add('active');
-
     updateDashboard();
-    toast('Patient registered! QR encrypted & ready.', 'success');
+    toast('Patient registered! Real AES-256 QR generated.', 'success');
 
-  } catch (e) {
+  } catch(e) {
     errBox.style.display = 'flex';
-    errMsg.textContent   = e.message;
+    document.getElementById('reg-error-msg').textContent = e.message;
     btn.disabled = false;
-    btn.innerHTML = '🔒 Generate QR';
+    btn.innerHTML = '🔒 Register & Encrypt';
     toast(e.message, 'error');
   }
-}
-
-/* Build the QR JSON from the patient's own data (the API returns the qr_path,
-   not the raw JSON; for a production app you'd store/return the blobs).
-   Here we reconstruct the payload client-side by encrypting locally using
-   the same structure the server uses — tier0 is plaintext JSON. */
-async function buildRealQRPayload(patientData) {
-  // We can't call /encrypt directly, but since tier0 is plain JSON
-  // and tiers 1-3 are opaque AES blobs we can't reproduce client-side,
-  // we instead hit /qr/scan with a doctor key to get the blobs back,
-  // OR we store the QR JSON ourselves from the re-registration flow.
-  //
-  // Best approach: reconstruct the QR payload structure for the scan demo.
-  // The t0 is plain JSON; t1-t3 we mark as encrypted placeholders.
-  // For a full offline demo we use the known patient data.
-  const t0 = JSON.stringify(patientData.tier0);
-  state.qrPayload = JSON.stringify({
-    v:   1,
-    uid: patientData.patient_uid,
-    t0:  t0,
-    t1:  `ENCRYPTED_TIER1[${patientData.patient_uid}]`,
-    t2:  `ENCRYPTED_TIER2[${patientData.patient_uid}]`,
-    t3:  `ENCRYPTED_TIER3[${patientData.patient_uid}]`,
-  });
-  // Attempt to fetch audit to confirm server got it
-  try {
-    const audit = await apiGet(`/audit/${patientData.patient_uid}`);
-    state.auditTrail = audit.audit_trail || [];
-  } catch(_) {}
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -995,27 +781,19 @@ async function buildRealQRPayload(patientData) {
 function updateDashboard() {
   if (!state.patient) return;
   const p = state.patient;
-
-  const hour = new Date().getHours();
-  const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
-  document.getElementById('dash-greeting').textContent = `${greeting}, ${p.name.split(' ')[0]}`;
-  document.getElementById('dash-name').textContent     = p.name;
-  document.getElementById('dash-uid').textContent      = p.patient_uid;
-  document.getElementById('dash-avatar').textContent   = p.name.split(' ').map(n => n[0]).join('').slice(0,2);
+  const hr = new Date().getHours();
+  document.getElementById('dash-greeting').textContent = `${hr<12?'Good morning':hr<18?'Good afternoon':'Good evening'}, ${p.name.split(' ')[0]}`;
+  document.getElementById('dash-name').textContent   = p.name;
+  document.getElementById('dash-uid').textContent    = p.patient_uid;
+  document.getElementById('dash-avatar').textContent = p.name.split(' ').map(n=>n[0]).join('').slice(0,2);
 
   const chips = document.getElementById('dash-chips');
-  chips.innerHTML = '';
-  chips.innerHTML += `<span class="hero-chip">🩸 ${p.blood_group}</span>`;
-  if (p.tier0.allergies?.length) {
-    chips.innerHTML += `<span class="hero-chip">⚠️ ${p.tier0.allergies[0]} allergy</span>`;
-  }
-  chips.innerHTML += `<span class="hero-chip">${p.tier2?.prescriptions?.length || 0} meds</span>`;
+  chips.innerHTML = `<span class="hero-chip">🩸 ${p.blood_group}</span>`;
+  if (p.tier0.allergies?.length) chips.innerHTML += `<span class="hero-chip">⚠️ ${p.tier0.allergies[0]}</span>`;
+  chips.innerHTML += `<span class="hero-chip">${p.tier2?.prescriptions?.length||0} meds</span>`;
 
-  document.getElementById('stat-meds').textContent    = p.tier2?.prescriptions?.length || 0;
-  document.getElementById('stat-refills').textContent = '—';
-  document.getElementById('stat-access').textContent  = state.auditTrail.length;
+  document.getElementById('stat-meds').textContent = p.tier2?.prescriptions?.length || 0;
 
-  // QR screen header
   document.getElementById('qr-patient-name').textContent = p.name;
   document.getElementById('qr-patient-sub').textContent  =
     `${p.patient_uid} · ${p.blood_group}` + (p.tier0.allergies?.length ? ` · ⚠️ ${p.tier0.allergies[0]}` : '');
@@ -1024,234 +802,173 @@ function updateDashboard() {
   renderAuditConsent();
 }
 
-function renderAccessLog() {
-  const el = document.getElementById('access-log-body');
-  if (!state.auditTrail.length) {
-    el.innerHTML = '<div style="color:var(--muted);font-size:13px;text-align:center;padding:16px 0;">No access events yet.</div>';
-    return;
-  }
-  el.innerHTML = [...state.auditTrail].reverse().slice(0, 5).map((log, i, arr) => `
-    <div class="log-item">
-      <div class="log-dot-col">
-        <div class="log-dot"></div>
-        ${i < arr.length-1 ? '<div class="log-line"></div>' : ''}
-      </div>
-      <div class="log-info">
-        <div class="log-who">${log.provider_id} · ${log.action}</div>
-        <div class="log-what">Tier ${log.tier_accessed} accessed</div>
-        <div class="log-when">${new Date(log.timestamp).toLocaleString()}</div>
-      </div>
-    </div>`).join('');
-}
-
-function renderAuditConsent() {
-  const el = document.getElementById('full-audit-log');
-  if (!state.auditTrail.length) {
-    el.innerHTML = '<div style="color:var(--muted);font-size:13px;text-align:center;padding:16px 0;">No audit entries yet.</div>';
-    return;
-  }
-  el.innerHTML = state.auditTrail.map((log, i, arr) => `
-    <div class="log-item">
-      <div class="log-dot-col">
-        <div class="log-dot"></div>
-        ${i < arr.length-1 ? '<div class="log-line"></div>' : ''}
-      </div>
-      <div class="log-info">
-        <div class="log-who">${log.provider_id}</div>
-        <div class="log-what">${log.action} · Tier ${log.tier_accessed}</div>
-        <div class="log-when">${new Date(log.timestamp).toLocaleString()}</div>
-      </div>
-    </div>`).join('');
-}
-
 /* ══════════════════════════════════════════════════════════
    QR CODE
    ══════════════════════════════════════════════════════════ */
-let qrGenerated = false;
-
 function generateQR() {
   const el = document.getElementById('qr-canvas');
   el.innerHTML = '';
-  const payload = state.qrPayload || JSON.stringify({
-    t0: { id: 'DEMO', name: 'Demo Patient', blood: '?' },
-    t1: 'AES[tier1]', t2: 'AES[tier2]', t3: 'AES[tier3]',
-    ts: Date.now(),
-  });
-  new QRCode(el, {
-    text: payload,
-    width: 220, height: 220,
-    colorDark: '#0f172a', colorLight: '#ffffff',
-    correctLevel: QRCode.CorrectLevel.M,
-  });
-  // Populate scan textarea for convenience
-  document.getElementById('scan-qr-json').value = payload;
-  qrGenerated = true;
+  const payload = state.qrPayload || '{"demo":"no patient registered yet"}';
+  new QRCode(el, { text: payload, width: 210, height: 210, colorDark: '#0f172a', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.M });
 }
 
 function refreshQR() {
-  const el = document.getElementById('qr-canvas');
-  el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;width:220px;height:220px;color:var(--muted);font-size:13px;">Regenerating…</div>';
-  setTimeout(generateQR, 600);
+  document.getElementById('qr-canvas').innerHTML =
+    '<div style="display:flex;align-items:center;justify-content:center;width:210px;height:210px;color:var(--muted);font-size:13px;">Refreshing…</div>';
+  setTimeout(generateQR, 400);
   toast('QR refreshed');
 }
 
-function printQR() {
-  window.print();
+/* KEY DEMO HELPER: copies QR JSON into scan tab and switches to it */
+function copyQRAndGoToScan() {
+  if (!state.qrPayload) { toast('Register a patient first', 'error'); return; }
+  document.getElementById('scan-qr-json').value = state.qrPayload;
+  toast('QR payload copied to Scan tab ✓', 'success');
+  setTimeout(() => showTab('scan'), 600);
 }
 
 /* ══════════════════════════════════════════════════════════
-   DRUG INTERACTION CHECK  →  POST /api/v1/drugs/check
+   DRUG CHECK
    ══════════════════════════════════════════════════════════ */
-async function runDrugCheck() {
-  const newDrug  = document.getElementById('drug-new').value.trim();
-  const existing = [...document.querySelectorAll('#drug-existing-tags .tag')]
-                     .map(t => t.textContent.replace('×','').trim());
-  const resultsEl = document.getElementById('drug-results');
-  const btn       = document.getElementById('drug-check-btn');
-
-  if (!newDrug) { toast('Enter a drug name to check', 'error'); return; }
-  if (!existing.length) { toast('Add at least one existing medication', 'error'); return; }
-
-  btn.disabled = true;
-  btn.innerHTML = '<div class="spinner"></div>';
-  resultsEl.innerHTML = '';
-
-  try {
-    const result = await apiPost('/drugs/check', {
-      new_drug:             newDrug,
-      existing_medications: existing,
-      provider_id:          'PHR-KA-00001',
-      patient_uid:          state.patient?.patient_uid || null,
-    });
-
-    if (result.interactions_found === 0) {
-      resultsEl.innerHTML = `
-        <div class="alert-strip info" style="margin-top:8px;">
-          <div class="alert-icon">✅</div>
-          <div class="alert-body">
-            <div class="alert-title">No interactions found</div>
-            <div class="alert-desc">${newDrug} appears safe with your current medications.</div>
-          </div>
-        </div>`;
-    } else {
-      const statusClass = result.safe_to_dispense ? 'info' : 'critical';
-      const statusMsg   = result.safe_to_dispense
-        ? `⚠️ ${result.interactions_found} interaction(s) found — review before dispensing`
-        : `🚫 CRITICAL: Do NOT dispense — ${result.interactions_found} dangerous interaction(s)`;
-
-      resultsEl.innerHTML = `
-        <div class="alert-strip ${statusClass}" style="margin-top:8px;margin-bottom:10px;">
-          <div class="alert-icon">${result.safe_to_dispense ? '⚠️' : '🔴'}</div>
-          <div class="alert-body"><div class="alert-title">${statusMsg}</div></div>
-        </div>
-        ${result.alerts.map(a => `
-          <div class="drug-result-item ${a.severity}">
-            <div class="sev-icon">${a.severity_icon}</div>
-            <div class="result-info">
-              <div class="drug-pair">${a.drug_a} + ${a.drug_b} <span style="font-size:11px;font-weight:400;color:var(--muted);">[${a.severity.toUpperCase()}]</span></div>
-              <div class="drug-rec">${a.recommendation}</div>
-            </div>
-          </div>`).join('')}`;
-    }
-
-    // Refresh audit if patient is known
-    if (state.patient) await refreshAudit();
-
-  } catch (e) {
-    resultsEl.innerHTML = `<div class="alert-strip critical" style="margin-top:8px;"><div class="alert-icon">⚠️</div><div class="alert-body"><div class="alert-title">Check failed</div><div class="alert-desc">${e.message}</div></div></div>`;
-  } finally {
-    btn.disabled = false;
-    btn.innerHTML = 'Check';
-  }
+function setDrugTags(meds) {
+  const container = document.getElementById('drug-existing-tags');
+  container.innerHTML = '';
+  meds.forEach(m => {
+    const tag = document.createElement('span');
+    tag.className = 'tag';
+    tag.innerHTML = m.toLowerCase() + ' <span class="tag-x" onclick="removeTag(this)">×</span>';
+    container.appendChild(tag);
+  });
 }
 
 function addDrugTag() {
   const input = document.getElementById('drug-existing-input');
   const val   = input.value.trim();
   if (!val) return;
-  const tag   = document.createElement('span');
+  const tag = document.createElement('span');
   tag.className = 'tag';
   tag.innerHTML = val + ' <span class="tag-x" onclick="removeTag(this)">×</span>';
   document.getElementById('drug-existing-tags').appendChild(tag);
   input.value = '';
 }
 
+// One-click demo: pre-fill and run
+function quickDrugCheck(newDrug, existing) {
+  document.getElementById('drug-new').value = newDrug;
+  setDrugTags([existing]);
+  runDrugCheck();
+}
+
+async function runDrugCheck() {
+  const newDrug  = document.getElementById('drug-new').value.trim();
+  const existing = getTags('drug-existing-tags');
+  const resultsEl = document.getElementById('drug-results');
+  const btn = document.getElementById('drug-check-btn');
+
+  if (!newDrug)           { toast('Enter a drug to check', 'error'); return; }
+  if (!existing.length)   { toast('Add at least one existing medication', 'error'); return; }
+
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div>';
+  resultsEl.innerHTML = '';
+
+  try {
+    const result = await apiPost('/drugs/check', {
+      new_drug: newDrug, existing_medications: existing,
+      provider_id: 'PHR-KA-00001',
+      patient_uid: state.patient?.patient_uid || null,
+    });
+
+    if (result.interactions_found === 0) {
+      resultsEl.innerHTML = `<div class="alert-strip info" style="margin-top:8px;"><div class="alert-icon">✅</div><div class="alert-body"><div class="alert-title">No interactions found</div><div class="alert-desc">${newDrug} is safe with current medications.</div></div></div>`;
+    } else {
+      const isCrit = !result.safe_to_dispense;
+      resultsEl.innerHTML = `
+        <div class="alert-strip ${isCrit?'critical':'moderate'}" style="margin-top:8px;margin-bottom:10px;">
+          <div class="alert-icon">${isCrit?'🚫':'⚠️'}</div>
+          <div class="alert-body"><div class="alert-title">${isCrit ? '🔴 DO NOT DISPENSE — Critical interaction' : `${result.interactions_found} interaction(s) found`}</div></div>
+        </div>
+        ${result.alerts.map(a => `
+          <div class="drug-result-item ${a.severity}">
+            <div class="sev-icon">${a.severity_icon}</div>
+            <div class="result-info">
+              <div class="drug-pair">${a.drug_a} + ${a.drug_b} <span style="font-size:11px;font-weight:400;">[${a.severity.toUpperCase()}]</span></div>
+              <div class="drug-rec">${a.recommendation}</div>
+              <div class="drug-mech">${a.mechanism}</div>
+            </div>
+          </div>`).join('')}`;
+    }
+    if (state.patient) await refreshAudit();
+  } catch(e) {
+    resultsEl.innerHTML = `<div class="alert-strip critical" style="margin-top:8px;"><div class="alert-icon">⚠️</div><div class="alert-body"><div class="alert-title">Check failed</div><div class="alert-desc">${e.message}</div></div></div>`;
+  } finally {
+    btn.disabled = false; btn.innerHTML = 'Check';
+  }
+}
+
 /* ══════════════════════════════════════════════════════════
-   QR SCAN  →  POST /api/v1/qr/scan
+   QR SCAN
    ══════════════════════════════════════════════════════════ */
-const PROVIDER_KEYS = {
-  'DOC-KA-00001': 'DOCTOR_KEY_001',
-  'PHR-KA-00001': 'PHARMA_KEY_001',
-  'ASH-KA-00001': 'ASHA_KEY_00001',
-};
+const PROVIDER_KEYS = { 'DOC-KA-00001':'DOCTOR_KEY_001', 'PHR-KA-00001':'PHARMA_KEY_001', 'ASH-KA-00001':'ASHA_KEY_00001' };
+const TIER_LABELS   = { 0:'Emergency', 1:'ASHA / Paramedic', 2:'Pharmacist', 3:'Doctor / Full' };
 
 function autofillProviderKey() {
-  const id  = document.getElementById('scan-provider-id').value;
-  document.getElementById('scan-license-key').value = PROVIDER_KEYS[id] || '';
+  document.getElementById('scan-license-key').value = PROVIDER_KEYS[document.getElementById('scan-provider-id').value] || '';
 }
 
 async function doScan() {
-  const providerId  = document.getElementById('scan-provider-id').value;
-  const licenseKey  = document.getElementById('scan-license-key').value.trim();
-  const qrJson      = document.getElementById('scan-qr-json').value.trim();
-  const resultEl    = document.getElementById('scan-result');
-  const btn         = document.getElementById('scan-btn');
+  const providerId = document.getElementById('scan-provider-id').value;
+  const licenseKey = document.getElementById('scan-license-key').value.trim();
+  const qrJson     = document.getElementById('scan-qr-json').value.trim();
+  const resultEl   = document.getElementById('scan-result');
+  const btn        = document.getElementById('scan-btn');
 
-  if (!qrJson) { toast('Paste a QR payload JSON first', 'error'); return; }
+  if (!qrJson) { toast('Use "Copy & Scan" on the QR tab first', 'error'); return; }
 
-  btn.disabled = true;
-  btn.innerHTML = '<div class="spinner"></div> Decrypting…';
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div> Decrypting…';
   resultEl.innerHTML = '';
 
   try {
-    const result = await apiPost('/qr/scan', {
-      qr_raw_json: qrJson,
-      provider_id: providerId,
-      license_key: licenseKey,
-    });
+    const result = await apiPost('/qr/scan', { qr_raw_json: qrJson, provider_id: providerId, license_key: licenseKey });
+    const tierNum = result.tier_accessed;
 
-    const tierLabels = { 0: 'Emergency', 1: 'ASHA/Paramedic', 2: 'Pharmacist', 3: 'Doctor' };
-    const tiers = Object.entries(result.data || {});
+    // Render decrypted data nicely (not raw JSON)
+    const tierHTML = Object.entries(result.data || {}).map(([key, val]) => {
+      const tNum = parseInt(key.replace('tier',''));
+      const rows = Object.entries(val).map(([k, v]) =>
+        `<div class="tier-data-row"><span class="tier-data-key">${k}</span><span class="tier-data-val">${Array.isArray(v) ? v.join(', ') || '—' : v || '—'}</span></div>`
+      ).join('');
+      return `
+        <div class="card" style="margin-bottom:10px;">
+          <div class="card-header">${['🟦','🟡','🔵','🟣'][tNum]} Tier ${tNum} — ${TIER_LABELS[tNum]}</div>
+          <div class="card-body"><div class="tier-data-block">${rows}</div></div>
+        </div>`;
+    }).join('');
 
     resultEl.innerHTML = `
       <div style="margin-top:12px;">
         <div class="success-icon-wrap"><div class="success-icon">🔓</div></div>
         <div style="text-align:center;margin-bottom:16px;">
-          <div style="font-weight:700;font-size:16px;">Decryption Successful</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:4px;">
-            Provider: ${result.provider_role} · Tier ${result.tier_accessed} access granted
-          </div>
+          <div style="font-weight:700;font-size:16px;">Access Granted — Tier ${tierNum}</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px;">${result.provider_role} · Patient: ${result.patient_uid}</div>
         </div>
-        ${tiers.map(([key, val]) => {
-          const tierNum = parseInt(key.replace('tier',''));
-          return `
-            <div class="card" style="margin-bottom:10px;">
-              <div class="card-header">${['🟦','🟡','🔵','🟣'][tierNum]} ${key.toUpperCase()} — ${tierLabels[tierNum]}</div>
-              <div class="card-body" style="font-family:'DM Mono',monospace;font-size:11px;color:var(--slate);word-break:break-all;white-space:pre-wrap;">${JSON.stringify(val, null, 2)}</div>
-            </div>`;
-        }).join('')}
+        <div class="alert-strip ${tierNum===3?'critical':tierNum===2?'major':'moderate'}" style="margin-bottom:12px;">
+          <div class="alert-icon">${tierNum===3?'🟣':tierNum===2?'🔵':'🟡'}</div>
+          <div class="alert-body"><div class="alert-title">Decrypted ${Object.keys(result.data).length} tier(s) — tiers above ${tierNum} remain encrypted</div></div>
+        </div>
+        ${tierHTML}
       </div>`;
 
-    // Refresh audit
     if (state.patient) await refreshAudit();
-
-  } catch (e) {
-    resultEl.innerHTML = `
-      <div class="alert-strip critical" style="margin-top:12px;">
-        <div class="alert-icon">🚫</div>
-        <div class="alert-body">
-          <div class="alert-title">Scan failed</div>
-          <div class="alert-desc">${e.message}</div>
-        </div>
-      </div>`;
+    document.getElementById('stat-access').textContent = state.auditTrail.length;
+  } catch(e) {
+    resultEl.innerHTML = `<div class="alert-strip critical" style="margin-top:12px;"><div class="alert-icon">🚫</div><div class="alert-body"><div class="alert-title">Scan failed</div><div class="alert-desc">${e.message}</div></div></div>`;
   } finally {
-    btn.disabled = false;
-    btn.innerHTML = '🔍 Scan & Decrypt';
+    btn.disabled = false; btn.innerHTML = '🔍 Scan & Decrypt';
   }
 }
 
 /* ══════════════════════════════════════════════════════════
-   AUDIT REFRESH
+   AUDIT
    ══════════════════════════════════════════════════════════ */
 async function refreshAudit() {
   if (!state.patient) return;
@@ -1264,17 +981,41 @@ async function refreshAudit() {
   } catch(_) {}
 }
 
-/* ══════════════════════════════════════════════════════════
-   TAB NAVIGATION
-   ══════════════════════════════════════════════════════════ */
-const TABS = ['dashboard','qr','scan','consent'];
+async function verifyChain() {
+  if (!state.patient) { toast('No patient loaded', 'error'); return; }
+  try {
+    const result = await apiGet(`/audit/${state.patient.patient_uid}/verify`);
+    const el = document.getElementById('chain-status');
+    el.style.display = 'block';
+    const ok = result.status === 'intact';
+    el.innerHTML = `<div class="alert-strip ${ok?'info':'critical'}"><div class="alert-icon">${ok?'🔗':'💥'}</div><div class="alert-body"><div class="alert-title">${ok?'Chain intact — '+result.message:'TAMPERED: '+result.message}</div></div></div>`;
+    document.getElementById('stat-chain').textContent = ok ? '✅' : '❌';
+    toast(ok ? 'Audit chain verified ✓' : 'Chain TAMPERED!', ok ? 'success' : 'error');
+  } catch(e) { toast(e.message, 'error'); }
+}
 
+function renderLogItems(logs, el) {
+  if (!logs.length) { el.innerHTML = '<div style="color:var(--muted);font-size:13px;text-align:center;padding:16px 0;">No entries yet.</div>'; return; }
+  el.innerHTML = [...logs].reverse().slice(0,8).map((log, i, arr) => `
+    <div class="log-item">
+      <div class="log-dot-col"><div class="log-dot"></div>${i<arr.length-1?'<div class="log-line"></div>':''}</div>
+      <div class="log-info">
+        <div class="log-who">${log.provider_id} · ${log.action}</div>
+        <div class="log-what">Tier ${log.tier_accessed} accessed</div>
+        <div class="log-when">${new Date(log.timestamp).toLocaleString()}</div>
+      </div>
+    </div>`).join('');
+}
+
+function renderAccessLog()    { renderLogItems(state.auditTrail, document.getElementById('access-log-body')); }
+function renderAuditConsent() { renderLogItems(state.auditTrail, document.getElementById('full-audit-log')); }
+
+/* ══════════════════════════════════════════════════════════
+   TAB NAV
+   ══════════════════════════════════════════════════════════ */
 function showTab(tab) {
-  TABS.forEach(t => {
-    document.getElementById('screen-' + t).classList.remove('active');
-  });
-  document.getElementById('screen-' + tab).classList.add('active');
-  // Update all tab bars
+  ['dashboard','qr','scan','consent'].forEach(t => document.getElementById('screen-'+t).classList.remove('active'));
+  document.getElementById('screen-'+tab).classList.add('active');
   document.querySelectorAll('.tab-item').forEach(el => {
     el.classList.toggle('active', el.getAttribute('onclick')?.includes(`'${tab}'`));
   });
@@ -1286,11 +1027,7 @@ function showTab(tab) {
    TAG HELPERS
    ══════════════════════════════════════════════════════════ */
 function addTag(type) {
-  const map = {
-    allergy: ['allergy-input','allergy-tags'],
-    med:     ['med-input',    'med-tags'],
-    diag:    ['diag-input',   'diag-tags'],
-  };
+  const map = { allergy:['allergy-input','allergy-tags'], med:['med-input','med-tags'], diag:['diag-input','diag-tags'] };
   const [inputId, tagsId] = map[type];
   const val = document.getElementById(inputId).value.trim();
   if (!val) return;
@@ -1300,29 +1037,22 @@ function addTag(type) {
   document.getElementById(tagsId).appendChild(tag);
   document.getElementById(inputId).value = '';
 }
-
 function removeTag(el) { el.parentElement.remove(); }
 
 /* ══════════════════════════════════════════════════════════
-   TOAST
+   TOAST & CLOCK
    ══════════════════════════════════════════════════════════ */
 let toastTimer;
-function toast(msg, type = '') {
+function toast(msg, type='') {
   const el = document.getElementById('toast');
   el.textContent = msg;
-  el.className   = 'show' + (type ? ' ' + type : '');
+  el.className = 'show' + (type ? ' '+type : '');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.className = '', 3000);
 }
 
-/* ══════════════════════════════════════════════════════════
-   CLOCK
-   ══════════════════════════════════════════════════════════ */
-function updateClock() {
-  document.getElementById('clock').textContent = new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
-}
-updateClock();
-setInterval(updateClock, 10000);
+function updateClock() { document.getElementById('clock').textContent = new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}); }
+updateClock(); setInterval(updateClock, 10000);
 
 /* ══════════════════════════════════════════════════════════
    INIT
