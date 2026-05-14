@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.utils.database import init_db
-from app.routers.api import router
+
+from app.routers import patients, providers, qr, drugs, audit, consent, utils
 
 app = FastAPI(
     title="MediChain Lite API",
@@ -12,7 +13,7 @@ app = FastAPI(
 # Allow frontend on localhost to call the API without CORS errors
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],          # for demo — tighten in production
+    allow_origins=["http://localhost:5173"],          # for demo — tighten in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,4 +29,10 @@ def on_startup():
     except Exception as e:
         print(f"[STARTUP] Seed skipped: {e}")
 
-app.include_router(router, prefix="/api/v1")
+app.include_router(patients.router, prefix="/api/v1")
+app.include_router(providers.router, prefix="/api/v1")
+app.include_router(qr.router, prefix="/api/v1")
+app.include_router(drugs.router, prefix="/api/v1")
+app.include_router(audit.router, prefix="/api/v1")
+app.include_router(consent.router, prefix="/api/v1")
+app.include_router(utils.router, prefix="/api/v1")

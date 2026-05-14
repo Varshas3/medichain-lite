@@ -56,3 +56,17 @@ class DrugInteraction(Base):
     mechanism      = Column(Text)
     recommendation = Column(Text)
     source         = Column(String(100))
+
+class ConsentSession(Base):
+    __tablename__ = "consent_sessions"
+    id             = Column(Integer, primary_key=True, index=True)
+    session_id     = Column(String(36), unique=True, nullable=False, index=True) # UUID
+    patient_uid    = Column(String(50), nullable=False, index=True)
+    provider_id    = Column(String(50), nullable=False, index=True)
+    otp_hash       = Column(String(255), nullable=False)
+    phone_number   = Column(String(15), nullable=False)
+    tier_requested = Column(Integer, nullable=False)
+    status         = Column(String(20), default="pending") # pending, approved, rejected, expired
+    created_at     = Column(DateTime, default=datetime.utcnow)
+    expires_at     = Column(DateTime, nullable=False)
+    approved_at    = Column(DateTime, nullable=True)
